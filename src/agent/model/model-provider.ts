@@ -1,15 +1,17 @@
-import { createOpenAI } from "@ai-sdk/openai";
+import "server-only";
 
-const apiKey = process.env.OPENAI_API_KEY;
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
+
+const apiKey = process.env.GEMINI_API_KEY;
 
 if (!apiKey) {
-  throw new Error("OPENAI_API_KEY is not configured.");
+  throw new Error("GEMINI_API_KEY is not configured.");
 }
 
-const openai = createOpenAI({
+const google = createGoogleGenerativeAI({
   apiKey,
 });
 
-export const DEFAULT_MODEL = "gpt-4o-mini";
+export const DEFAULT_MODEL = "gemini-3.5-flash-lite";
 
-export const copilotModel = openai(DEFAULT_MODEL);
+export const copilotModel = google(DEFAULT_MODEL);

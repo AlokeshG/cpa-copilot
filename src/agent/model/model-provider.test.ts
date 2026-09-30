@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 describe("model provider", () => {
-  it("has an OpenAI API key configured", () => {
-    expect(process.env.OPENAI_API_KEY).toBeTruthy();
+  it("has a Gemini API key configured", () => {
+    expect(process.env.GEMINI_API_KEY).toBeTruthy();
   });
 });
