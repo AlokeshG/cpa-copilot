@@ -8,7 +8,7 @@ The application combines an LLM-based agent with deterministic accounting and CR
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
 - AI-powered CPA Copilot
 - Canadian GST/HST compliance analysis
@@ -33,9 +33,46 @@ The application combines an LLM-based agent with deterministic accounting and CR
 
 ---
 
-## 🏗️ Architecture
+# 🛠️ Technology Stack
 
-The application follows an agentic architecture:
+## Frontend
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+
+## Backend
+
+- Next.js App Router
+- TypeScript
+- REST API Routes
+
+## AI
+
+- Google Gemini
+- Vercel AI SDK
+- AI tool calling
+- Multi-step agent execution
+
+## Database
+
+- PostgreSQL
+- Prisma ORM
+
+## Validation
+
+- Zod
+
+## Testing
+
+- Vitest
+
+---
+
+# 🏗️ Architecture
+
+The application follows an agentic architecture in which the LLM handles interpretation, reasoning, tool selection, and explanation, while deterministic application services handle financial calculations, compliance validation, persistence, and state transitions.
 
 ```text
                     ┌─────────────────────┐
@@ -54,7 +91,8 @@ The application follows an agentic architecture:
                     │  Gemini + AI SDK    │
                     └──────────┬──────────┘
                                │
-                    ┌──────────▼──────────┐
+                               ▼
+                    ┌─────────────────────┐
                     │   Tool Registry     │
                     │  Allowlisted Tools  │
                     └──────────┬──────────┘
